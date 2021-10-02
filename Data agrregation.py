@@ -3,9 +3,6 @@ import pandas as pd
 
 #getting data
 obama = pd.read_csv("obama.csv", parse_dates=["year_month"])
-
-
-
 #getting data_mean of each month
 
 data_mean = obama.groupby("year_month").mean()
@@ -26,7 +23,6 @@ plt.ylabel("Approval rating")
 plt.legend(["Approval rating", "Mean", "Median"])
 plt.savefig("aggregated data.png")
 plt.show()
-
 data_25 = obama.groupby("year_month").quantile(0.25)
 data_75 = obama.groupby("year_month").quantile(0.75)
 
@@ -36,3 +32,4 @@ plt.plot(data_25.index, data_25.approve_percent, "green")
 plt.plot(obama.year_month, obama.approve_percent, "o", markersize=3, alpha=0.4) #markersize for size of dot and alpha for opacity
 plt.legend(["75% data", "Median", "25% Data", "Approval rating"])
 plt.show()
+print("Here is Your Graph")
