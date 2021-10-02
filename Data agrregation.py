@@ -14,7 +14,6 @@ print(data_mean)
 #getting data_median of each month
 
 data_median = obama.groupby("year_month").median()
-# print(data_median)
 
 # plotting
 
